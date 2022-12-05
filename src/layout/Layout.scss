@@ -1,0 +1,13 @@
+.layout {
+  height: 100vh;
+  overflow: auto;
+  display: flex;
+
+  > .sidebar {
+    flex: none;
+  }
+
+  > main {
+    flex: 1;
+  }
+}

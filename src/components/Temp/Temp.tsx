@@ -1,12 +1,11 @@
-import { Button } from 'antd'
+export default function Temp(props: any) {
+  console.log('render')
 
-export default function Temp() {
   return (
-    <div className="temp">
-      <header>temp</header>
-      <main>
-        <Button type="primary">btn</Button>
-      </main>
-    </div>
+    <>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </>
   )
 }
