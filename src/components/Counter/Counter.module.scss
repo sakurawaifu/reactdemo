@@ -1,0 +1,50 @@
+.counter {
+  border: solid 1px #afafaf;
+  width: 100px;
+  height: 40px;
+  display: flex;
+}
+
+.input {
+  outline: none;
+  border: none;
+  flex: 1;
+  min-width: 0;
+}
+
+.action-btns {
+  border-left: solid 1px #c8c8c8;
+  width: 20px;
+  height: 100%;
+  flex: none;
+  cursor: pointer;
+  user-select: none;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  min-height: 0;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: flex-grow 0.25s;
+
+  &:hover {
+    flex-grow: 2;
+  }
+
+  &:nth-child(n+2) {
+    border-top: solid 1px #c8c8c8;
+  }
+}
+
+.inc-btn {
+  composes: btn;
+}
+
+.dec-btn {
+  composes: btn;
+}

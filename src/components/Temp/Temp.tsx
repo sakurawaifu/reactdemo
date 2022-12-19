@@ -1,11 +1,17 @@
-export default function Temp(props: any) {
-  console.log('render')
+import styles from './Temp.module.scss'
+import BasePropsType from '../../ts_define/BasePropsType'
+import clsmix from '../../utils/clsmix'
+import React from 'react'
 
+export type TempProps = BasePropsType & {}
+
+const Temp = (props: TempProps) => {
+  console.log(styles)
   return (
-    <>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-    </>
+    <div className={clsmix(styles['temp-comp'], props.className)}>
+      temp
+    </div>
   )
 }
+
+export default Temp

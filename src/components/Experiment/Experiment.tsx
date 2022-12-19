@@ -1,10 +1,13 @@
-import React from 'react'
+import BasePropsType from '../../ts_define/BasePropsType'
+import React, { ForwardedRef } from 'react'
 
-// todo any props
-export default function Experiment(props: any) {
-  console.log(props)
+export type ExperimentProps = BasePropsType & {}
+
+const Experiment = React.forwardRef((props: ExperimentProps, ref: ForwardedRef<HTMLInputElement>) => {
 
   return (
-    <div>experiment</div>
+    <div ref={ref}>实验</div>
   )
-}
+})
+
+export default Experiment
