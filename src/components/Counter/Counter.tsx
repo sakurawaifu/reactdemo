@@ -39,9 +39,9 @@ const Counter = (props: CounterProps) => {
         value={count}
         onInput={e => setCount(Number(e.currentTarget.value))}
       />
-      <div className={styles['action-btns']}>
-        <div className={styles['inc-btn']} onClick={increment}>∧</div>
-        <div className={styles['dec-btn']} onClick={decrement}>∨</div>
+      <div className={styles.actionBtns}>
+        <div className={styles.incBtn} onClick={increment}>∧</div>
+        <div className={styles.decBtn} onClick={decrement}>∨</div>
       </div>
     </div>
   )
