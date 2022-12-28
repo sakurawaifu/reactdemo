@@ -1,27 +1,25 @@
 import styles from './Main.module.scss'
 import BasePropsType from '../../../constant/type/BasePropsType'
 import clsmix from '../../../utils/clsmix'
-import React, { useContext } from 'react'
-import ThemeContext from '../../../context/ThemeContext'
-import Mode from '../../../constant/data/theme/Mode'
+import React from 'react'
 import classname from '../../../utils/classname'
 import { Outlet } from 'react-router-dom'
+import useIsNightMode from '../../../hooks/theme/useIsNightMode'
 
 export type MainProps = BasePropsType & {}
 
 const Main = React.memo((props: MainProps) => {
-  const { theme } = useContext(ThemeContext)
-  const isNightMode = theme.mode === Mode.NIGHT
+  const isNightMode = useIsNightMode()
 
   return (
-    <div
+    <main
       className={clsmix(classname({
         [styles.main]: true,
         [styles.nightMode]: isNightMode
       }), props.className)}
     >
       <Outlet></Outlet>
-    </div>
+    </main>
   )
 })
 

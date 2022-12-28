@@ -30,10 +30,15 @@
 // theme mode
 .layout {
   --theme-color-bg: #f0f2f5;
+  --theme-color-text: #333;
+
   background-color: var(--theme-color-bg);
+  color: var(--theme-color-text);
+
   transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
 
   &.night-mode {
     --theme-color-bg: #061121;
+    --theme-color-text: #fff;
   }
 }

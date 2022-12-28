@@ -16,7 +16,7 @@ const commonRoutes: RouteObject[] = [
         element: <Home></Home>
       },
       {
-        path: '/temp',
+        path: '/article',
         element: <ArticleList></ArticleList>
       }
     ]
