@@ -1,0 +1,14 @@
+.sidebar {
+  height: 100vh;
+  overflow-y: auto;
+
+  > .nav-list {
+    height: 100%;
+  }
+}
+
+// theme mode
+.sidebar > .nav-list {
+  transition-duration: var(--theme-transition-duration);
+  transition-timing-function: var(--theme-transition-timing-function);
+}

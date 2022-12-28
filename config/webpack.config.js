@@ -389,13 +389,7 @@ module.exports = function (webpackEnv) {
                     titleProp: true,
                     ref: true,
                   },
-                },
-                {
-                  loader: require.resolve('file-loader'),
-                  options: {
-                    name: 'static/media/[name].[hash].[ext]',
-                  },
-                },
+                }
               ],
               issuer: {
                 and: [/\.(ts|tsx|js|jsx|md|mdx)$/],

@@ -1,8 +1,8 @@
 import styles from './Counter.module.scss'
 import React, { useEffect } from 'react'
-import BasePropsType from '../../ts_define/BasePropsType'
+import BasePropsType from '../../constant/type/BasePropsType'
 import clsmix from '../../utils/clsmix'
-import useCount from '../../hooks/useCount'
+import useCount from '../../hooks/common/useCount'
 
 export type CounterProps = BasePropsType & {
   /* 初始值 */

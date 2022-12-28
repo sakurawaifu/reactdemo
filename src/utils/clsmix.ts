@@ -1,13 +1,25 @@
-type clsType = string | string[]
+type clsType = string
 
-const splitClassName = (cls: clsType): string[] => typeof cls === 'string' ? cls.split(' ') : cls
+const splitCls = (cls: clsType) => cls.trim().split(' ')
 
-export default function clsmix(selfCls: clsType, otherCls?: clsType): string {
-  if (otherCls === undefined) {
-    return typeof selfCls === 'string' ? selfCls : selfCls.join(' ')
+const clsmix = (self?: clsType, other?: clsType): string => {
+  if (self === undefined && other === undefined) {
+    return ''
   }
 
-  const clsAry1: string[] = splitClassName(selfCls)
-  const clsAry2: string[] = splitClassName(otherCls)
-  return [...new Set([...clsAry1, ...clsAry2])].join(' ')
+  if (self !== undefined && other !== undefined) {
+    const selfClsAry = splitCls(self)
+    const otherClsAry = splitCls(other)
+    return [...new Set([...selfClsAry, ...otherClsAry])].join(' ')
+  }
+
+  if (self !== undefined) {
+    const selfClsAry = splitCls(self)
+    return [...new Set([...selfClsAry])].join(' ')
+  } else {
+    const otherClsAry = splitCls(other as clsType)
+    return [...new Set([...otherClsAry])].join(' ')
+  }
 }
+
+export default clsmix

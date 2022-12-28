@@ -1,24 +1,16 @@
 import styles from './Temp.module.scss'
-import BasePropsType from '../../ts_define/BasePropsType'
+import BasePropsType from '../../constant/type/BasePropsType'
 import clsmix from '../../utils/clsmix'
-import React, { useContext } from 'react'
-import ThemeContext from '../../context/ThemeContext'
+import React from 'react'
 
 export type TempProps = BasePropsType & {}
 
-const Temp = (props: TempProps) => {
-  console.log(styles)
-
-  const count = useContext(ThemeContext)
-
+const Temp = React.memo((props: TempProps) => {
   return (
     <div className={clsmix(styles.tempComp, props.className)}>
       temp
-      <div className={styles.tempConsumer}>
-        {count}
-      </div>
     </div>
   )
-}
+})
 
 export default Temp

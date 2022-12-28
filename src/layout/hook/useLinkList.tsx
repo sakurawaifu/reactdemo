@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ItemType } from '../../components/Sidebar/Sidebar'
+import { ItemType } from '../components/Sidebar/Sidebar'
 
 export type RouteObject = {
   path: string

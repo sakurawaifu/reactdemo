@@ -1,3 +1,4 @@
+import styles from './ErrorPage.module.scss'
 import { useRouteError } from 'react-router-dom'
 
 export default function ErrorPage() {
@@ -5,7 +6,7 @@ export default function ErrorPage() {
   console.log(error)
 
   return (
-    <div className="error-page">
+    <div className={styles.errorPage}>
       页面出错
     </div>
   )

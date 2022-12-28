@@ -1,5 +1,5 @@
 import styles from './Child.module.scss'
-import BasePropsType from '../../ts_define/BasePropsType'
+import BasePropsType from '../../constant/type/BasePropsType'
 import { useRef } from 'react'
 import { Button } from 'antd'
 

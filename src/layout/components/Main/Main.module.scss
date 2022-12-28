@@ -1,0 +1,14 @@
+.main {
+  margin: 24px;
+}
+
+// theme mode
+.main {
+  --theme-color-main-bg: #fff;
+  background-color: var(--theme-color-main-bg);
+  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+
+  &.night-mode {
+    --theme-color-main-bg: #061121;
+  }
+}

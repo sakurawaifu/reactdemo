@@ -1,0 +1,54 @@
+.mode-switch {
+  --switch-width: 48px;
+  --switch-height: 26px;
+
+  border-radius: 9999px;
+  padding: 2px;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  cursor: pointer;
+}
+
+.handle {
+  border-radius: 50%;
+  height: 100%;
+  aspect-ratio: 1;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// -----------theme mode--------------
+// day mode
+.mode-switch {
+  background-color: #03a9f4;
+  border-color: #333;
+
+  transition-property: background-color, border-color;
+  transition-duration: var(--theme-transition-duration);
+  transition-timing-function: var(--theme-transition-timing-function);
+
+  > .handle {
+    transition: transform var(--theme-transition-duration) var(--theme-transition-timing-function);
+
+    > svg {
+      fill: #ffd700;
+    }
+  }
+}
+
+// night mode
+.mode-switch.checked {
+  background-color: #235198;
+  border-color: #fff;
+
+  > .handle {
+    transform: translateX(calc(var(--switch-width) - var(--switch-height))) rotateZ(1turn);
+
+    > svg {
+      fill: #fff;
+    }
+  }
+}
