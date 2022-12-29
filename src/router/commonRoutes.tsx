@@ -1,9 +1,10 @@
 import { RouteObject } from 'react-router-dom'
 
-import Home from '../views/Home/Home'
-import ErrorPage from '../views/error/ErrorPage/ErrorPage'
-import ArticleList from '../views/ArticleList/ArticleList'
 import Layout from '../layout/Layout'
+import ErrorPage from '../views/error/ErrorPage/ErrorPage'
+import Home from '../views/Home/Home'
+import ArticleList from '../views/ArticleList/ArticleList'
+import Experiment from '../views/Experiment/Experiment'
 
 const commonRoutes: RouteObject[] = [
   {
@@ -18,6 +19,10 @@ const commonRoutes: RouteObject[] = [
       {
         path: '/article',
         element: <ArticleList></ArticleList>
+      },
+      {
+        path: '/experiment',
+        element: <Experiment></Experiment>
       }
     ]
   }

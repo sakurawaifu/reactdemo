@@ -6,6 +6,7 @@ import { UserOutlined } from '@ant-design/icons';
 
 export type Account = BasePropsType & {}
 
+// eslint-disable-next-line @typescript-eslint/no-redeclare
 const Account = (props: Account) => {
   const name = 'Hikari' // todo 用户名
 

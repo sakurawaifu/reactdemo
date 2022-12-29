@@ -1,9 +1,9 @@
 import styles from './ErrorPage.module.scss'
 import { useRouteError } from 'react-router-dom'
 
-export default function ErrorPage() {
+const ErrorPage = () => {
   const error = useRouteError()
-  console.log(error)
+  console.error(error)
 
   return (
     <div className={styles.errorPage}>
@@ -11,3 +11,5 @@ export default function ErrorPage() {
     </div>
   )
 }
+
+export default ErrorPage
