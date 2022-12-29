@@ -5,6 +5,7 @@ import ErrorPage from '../views/error/ErrorPage/ErrorPage'
 import Home from '../views/Home/Home'
 import ArticleList from '../views/ArticleList/ArticleList'
 import Experiment from '../views/Experiment/Experiment'
+import ExperimentLoader from '../views/Experiment/ExperimentLoader'
 
 const commonRoutes: RouteObject[] = [
   {
@@ -22,7 +23,8 @@ const commonRoutes: RouteObject[] = [
       },
       {
         path: '/experiment',
-        element: <Experiment></Experiment>
+        element: <Experiment></Experiment>,
+        loader: ExperimentLoader
       }
     ]
   }

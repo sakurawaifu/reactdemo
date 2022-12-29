@@ -9,6 +9,8 @@ import useTheme from './hook/useTheme'
 import Mode from '../constant/data/theme/Mode'
 import classname from '../utils/classname'
 import Main from './components/Main/Main'
+import { useNavigation } from 'react-router-dom'
+import LoadingProgress from './components/LoadingProgress/LoadingProgress'
 
 export type LayoutProps = BasePropsType & {}
 
@@ -29,6 +31,10 @@ const routes: RouteObject[] = [
 ]
 
 const Layout = (props: LayoutProps) => {
+  console.log('layout')
+  const state = useNavigation()
+  console.log(state)
+
   const linkList = useLinkList(routes)
 
   const [
@@ -50,6 +56,8 @@ const Layout = (props: LayoutProps) => {
         <Sidebar className={styles.sidebar} menuItems={linkList}></Sidebar>
         <Header className={styles.header}></Header>
         <Main className={styles.main}></Main>
+
+        <LoadingProgress complete={state.state === 'idle'}></LoadingProgress>
       </div>
     </ThemeContext.Provider>
   )

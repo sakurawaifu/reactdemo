@@ -4,10 +4,9 @@ import BasePropsType from '../../constant/type/BasePropsType'
 import { Avatar } from 'antd'
 import { UserOutlined } from '@ant-design/icons';
 
-export type Account = BasePropsType & {}
+export type AccountProps = BasePropsType & {}
 
-// eslint-disable-next-line @typescript-eslint/no-redeclare
-const Account = (props: Account) => {
+const Account = (props: AccountProps) => {
   const name = 'Hikari' // todo 用户名
 
   return (
