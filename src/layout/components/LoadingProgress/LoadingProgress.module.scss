@@ -1,13 +1,11 @@
 .loading-progress {
-  --loading-end: scaleX(0.75);
-
   position: fixed;
   top: 0;
   width: 100vw;
   height: 2px;
   background-color: #2586ef;
   transform-origin: 0 0;
-  animation: loading 3s ease-out forwards;
+  animation: loading 2.5s cubic-bezier(0.85, 0, 0.15, 1) forwards;
 
   &.complete {
     animation: fade-out 0.5s ease-out forwards;
@@ -19,7 +17,7 @@
     transform: scaleX(0);
   }
   to {
-    transform: var(--loading-end);
+    transform: scaleX(0.75);
   }
 }
 
