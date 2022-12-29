@@ -1,6 +1,7 @@
 .layout {
   --theme-transition-duration: 0.3s;
   --theme-transition-timing-function: ease;
+  --theme-transition-except-property: var(--theme-transition-duration) var(--theme-transition-timing-function);
 
   --header-height: 50px;
   --sidebar-width: 150px;
@@ -35,7 +36,7 @@
   background-color: var(--theme-color-bg);
   color: var(--theme-color-text);
 
-  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transition: background-color var(--theme-transition-except-property);
 
   &.night-mode {
     --theme-color-bg: #061121;

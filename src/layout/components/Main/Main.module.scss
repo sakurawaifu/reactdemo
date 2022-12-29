@@ -6,7 +6,7 @@
 .main {
   --theme-color-main-bg: #fff;
   background-color: var(--theme-color-main-bg);
-  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transition: background-color var(--theme-transition-except-property);
 
   &.night-mode {
     --theme-color-main-bg: #08192d;

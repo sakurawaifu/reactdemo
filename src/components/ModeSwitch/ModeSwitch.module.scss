@@ -31,7 +31,7 @@
   transition-timing-function: var(--theme-transition-timing-function);
 
   > .handle {
-    transition: transform var(--theme-transition-duration) var(--theme-transition-timing-function);
+    transition: transform var(--theme-transition-except-property);
 
     > svg {
       fill: #ffd700;

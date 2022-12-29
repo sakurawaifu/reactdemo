@@ -11,7 +11,7 @@
 .header {
   --theme-color-header-bg: #fff;
   background-color: var(--theme-color-header-bg);
-  transition: background-color var(--theme-transition-duration) var(--theme-transition-timing-function);
+  transition: background-color var(--theme-transition-except-property);
 
   &.night-mode {
     --theme-color-header-bg: #1e1f26;
