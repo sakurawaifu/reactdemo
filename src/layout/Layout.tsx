@@ -1,18 +1,17 @@
 import styles from './Layout.module.scss'
 import Sidebar from './components/Sidebar/Sidebar'
 import useLinkList, { RouteObject } from './hook/useLinkList'
-import BasePropsType from '../constant/type/BasePropsType'
-import clsmix from '../utils/clsmix'
 import ThemeContext from '../context/ThemeContext'
 import Header from './components/Header/Header'
 import useTheme from './hook/useTheme'
-import Mode from '../constant/data/theme/Mode'
-import classname from '../utils/classname'
+import Mode from '../constant/theme/Mode'
+import classnames from '../utils/classnames'
 import Main from './components/Main/Main'
 import { useNavigation } from 'react-router-dom'
 import LoadingProgress from './components/LoadingProgress/LoadingProgress'
+import { CProps } from '../types/CProps'
 
-export type LayoutProps = BasePropsType & {}
+export type LayoutProps = CProps<{}>
 
 // todo
 const routes: RouteObject[] = [
@@ -48,10 +47,11 @@ const Layout = (props: LayoutProps) => {
   return (
     <ThemeContext.Provider value={{ theme, toggleMode }}>
       <div
-        className={clsmix(classname({
-          [styles.layout]: true,
-          [styles.nightMode]: isNightMode
-        }), props.className)}
+        className={classnames(
+          props.className,
+          styles.layout,
+          { [styles.nightMode]: isNightMode }
+        )}
       >
         <Sidebar className={styles.sidebar} menuItems={linkList}></Sidebar>
         <Header className={styles.header}></Header>

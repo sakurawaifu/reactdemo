@@ -1,6 +1,6 @@
 import { Theme } from '../context/ThemeContext'
 import storage from '../utils/storage'
-import defaultTheme from '../constant/data/theme/defaultTheme'
+import defaultTheme from '../constant/theme/defaultTheme'
 
 const STORAGE_KEY = 'theme'
 

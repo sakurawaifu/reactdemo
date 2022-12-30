@@ -1,15 +1,14 @@
 import styles from './Counter.module.scss'
 import React, { useEffect } from 'react'
-import BasePropsType from '../../constant/type/BasePropsType'
-import clsmix from '../../utils/clsmix'
 import useCount from '../../hooks/common/useCount'
+import { CProps } from '../../types/CProps'
+import classnames from '../../utils/classnames'
 
-export type CounterProps = BasePropsType & {
-  /* 初始值 */
+export type CounterProps = CProps<{
   init?: number
   delta?: number,
   onChange?: (value: number) => void
-}
+}>
 
 const Counter = (props: CounterProps) => {
   console.log('counter')
@@ -33,7 +32,7 @@ const Counter = (props: CounterProps) => {
   }, [count, onChange])
 
   return (
-    <div className={clsmix(styles.counter, props.className)}>
+    <div className={classnames(styles.counter, props.className)}>
       <input
         className={styles.input}
         value={count}

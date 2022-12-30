@@ -1,22 +1,22 @@
 import styles from './Header.module.scss'
-import clsmix from '../../../utils/clsmix'
-import BasePropsType from '../../../constant/type/BasePropsType'
 import ModeSwitch from '../../../components/ModeSwitch/ModeSwitch'
-import classname from '../../../utils/classname'
+import classnames from '../../../utils/classnames'
 import Account from '../../../components/Account/Account'
 import useIsNightMode from '../../../hooks/theme/useIsNightMode'
+import { CProps } from '../../../types/CProps'
 
-export type HeaderProps = BasePropsType & {}
+export type HeaderProps = CProps<{}>
 
 const Header = (props: HeaderProps) => {
   const isNightMode = useIsNightMode()
 
   return (
     <header
-      className={clsmix(classname({
-        [styles.header]: true,
-        [styles.nightMode]: isNightMode
-      }), props.className)}
+      className={classnames(
+        props.className,
+        styles.header,
+        { [styles.nightMode]: isNightMode }
+      )}
     >
       <ModeSwitch></ModeSwitch>
       <Account></Account>

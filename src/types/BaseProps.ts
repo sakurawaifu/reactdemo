@@ -1,8 +1,8 @@
 import React from 'react'
 
-type BasePropsType = {
+type BaseProps = {
   className?: string
   children?: React.ReactNode
 }
 
-export default BasePropsType
+export default BaseProps

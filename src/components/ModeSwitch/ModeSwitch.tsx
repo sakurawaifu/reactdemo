@@ -1,28 +1,27 @@
 import styles from './ModeSwitch.module.scss'
-import BasePropsType from '../../constant/type/BasePropsType'
-import Mode from '../../constant/data/theme/Mode'
-import clsmix from '../../utils/clsmix'
-import classname from '../../utils/classname'
+import Mode from '../../constant/theme/Mode'
+import classnames from '../../utils/classnames'
 import { useContext } from 'react'
 import ThemeContext from '../../context/ThemeContext'
 import SunIcon from '../../assets/icon/sun.svg'
 import NightIcon from '../../assets/icon/night.svg'
+import { CProps } from '../../types/CProps'
 
-export type ModeSwitchProps = BasePropsType & {}
+export type ModeSwitchProps = CProps<{}>
 
+// todo 将 theme 变为 prop
 const ModeSwitch = (props: ModeSwitchProps) => {
   const { theme, toggleMode } = useContext(ThemeContext)
-
-  const localCls = classname({
-    [styles.modeSwitch]: true,
-    [styles.checked]: theme.mode === Mode.NIGHT // night为选中态
-  })
 
   const icon = theme.mode === Mode.DAY ? <SunIcon></SunIcon> : <NightIcon></NightIcon>
 
   return (
     <div
-      className={clsmix(localCls, props.className)}
+      className={classnames(
+        props.className,
+        styles.modeSwitch,
+        { [styles.checked]: theme.mode === Mode.NIGHT }
+      )}
       onClick={() => toggleMode()}
     >
       <div className={styles.handle}>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Theme } from '../../context/ThemeContext'
 import ThemeStore from '../../store/ThemeStore'
-import Mode from '../../constant/data/theme/Mode'
+import Mode from '../../constant/theme/Mode'
 
 const useTheme = () => {
   const [theme, setTheme] = useState<Theme>(ThemeStore.get())

@@ -1,13 +1,13 @@
 import styles from './Home.module.scss'
 import React from 'react'
-import clsmix from '../../utils/clsmix'
-import BasePropsType from '../../constant/type/BasePropsType'
+import classnames from '../../utils/classnames'
+import { CProps } from '../../types/CProps'
 
-export type HomeProps = BasePropsType & {}
+export type HomeProps = CProps<{}>
 
 const Home = React.memo((props: HomeProps) => {
   return (
-    <div className={clsmix(styles.home, props.className)}>
+    <div className={classnames(styles.home, props.className)}>
       <header>home</header>
       <main>
 

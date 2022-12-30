@@ -1,10 +1,10 @@
 import styles from './ArticleList.module.scss'
-import BasePropsType from '../../constant/type/BasePropsType'
-import clsmix from '../../utils/clsmix'
 import useMount from '../../hooks/common/useMount'
 import { fetchArticleList } from '../../api/article'
+import classnames from '../../utils/classnames'
+import { CProps } from '../../types/CProps'
 
-export type ArticleListProps = BasePropsType & {}
+export type ArticleListProps = CProps<{}>
 
 const ArticleList = (props: ArticleListProps) => {
   useMount(() => {
@@ -12,7 +12,7 @@ const ArticleList = (props: ArticleListProps) => {
   })
 
   return (
-    <div className={clsmix(styles.articleList, props.className)}>
+    <div className={classnames(styles.articleList, props.className)}>
       article list
     </div>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import Mode from '../constant/data/theme/Mode'
+import Mode from '../constant/theme/Mode'
 import ThemeStore from '../store/ThemeStore'
 
 export type Theme = {

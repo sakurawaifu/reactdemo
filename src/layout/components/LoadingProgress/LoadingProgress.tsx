@@ -1,20 +1,21 @@
 import styles from './LoadingProgress.module.scss'
-import clsmix from '../../../utils/clsmix'
-import BasePropsType from '../../../constant/type/BasePropsType'
-import classname from '../../../utils/classname'
+import classnames from '../../../utils/classnames'
+import { CProps } from '../../../types/CProps'
 
-export type LoadingProgressProps = BasePropsType & {
+export type LoadingProgressProps = CProps<{
   complete: boolean
-}
+}>
 
 const LoadingProgress = (props: LoadingProgressProps) => {
   return (
     <div
-      className={clsmix(classname({
-        [styles.loadingProgress]: true,
-        [styles.complete]: props.complete
-      }), props.className)}
-    ></div>
+      className={classnames(
+        props.className,
+        styles.loadingProgress,
+        { [styles.complete]: props.complete }
+      )}
+    >
+    </div>
   )
 }
 

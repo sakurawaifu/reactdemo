@@ -3,15 +3,15 @@ import styles from './Sidebar.module.scss'
 import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
 import { useLocation } from 'react-router-dom'
-import clsmix from '../../../utils/clsmix'
-import BasePropsType from '../../../constant/type/BasePropsType'
 import useIsNightMode from '../../../hooks/theme/useIsNightMode'
+import classnames from '../../../utils/classnames'
+import { CProps } from '../../../types/CProps'
 
 export type ItemType = Omit<MenuProps['items'], 'key'> & { key: string }
 
-type SidebarProps = BasePropsType & {
+type SidebarProps = CProps<{
   menuItems: ItemType[]
-}
+}>
 
 const Sidebar = React.memo((props: SidebarProps) => {
   const isNightMode = useIsNightMode()
@@ -23,9 +23,9 @@ const Sidebar = React.memo((props: SidebarProps) => {
   }, [pathname])
 
   return (
-    <nav className={clsmix(styles.sidebar, props.className)}>
+    <nav className={classnames(styles.sidebar, props.className)}>
       <Menu
-        className={clsmix(styles.navList)}
+        className={styles.navList}
         theme={isNightMode ? 'dark' : 'light'}
         items={props.menuItems}
         selectedKeys={selectedKeys}

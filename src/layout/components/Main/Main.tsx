@@ -1,22 +1,22 @@
 import styles from './Main.module.scss'
-import BasePropsType from '../../../constant/type/BasePropsType'
-import clsmix from '../../../utils/clsmix'
 import React from 'react'
-import classname from '../../../utils/classname'
+import classnames from '../../../utils/classnames'
 import { Outlet } from 'react-router-dom'
 import useIsNightMode from '../../../hooks/theme/useIsNightMode'
+import { CProps } from '../../../types/CProps'
 
-export type MainProps = BasePropsType & {}
+export type MainProps = CProps<{}>
 
 const Main = React.memo((props: MainProps) => {
   const isNightMode = useIsNightMode()
 
   return (
     <main
-      className={clsmix(classname({
-        [styles.main]: true,
-        [styles.nightMode]: isNightMode
-      }), props.className)}
+      className={classnames(
+        props.className,
+        styles.main,
+        { [styles.nightMode]: isNightMode }
+      )}
     >
       <Outlet></Outlet>
     </main>

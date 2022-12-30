@@ -1,17 +1,17 @@
 import styles from './Account.module.scss'
-import clsmix from '../../utils/clsmix'
-import BasePropsType from '../../constant/type/BasePropsType'
 import { Avatar } from 'antd'
 import { UserOutlined } from '@ant-design/icons';
+import classnames from '../../utils/classnames'
+import { CProps } from '../../types/CProps'
 
-export type AccountProps = BasePropsType & {}
+export type AccountProps = CProps<{}>
 
 const Account = (props: AccountProps) => {
   const name = 'Hikari' // todo 用户名
 
   return (
     <div
-      className={clsmix(styles.account, props.className)}
+      className={classnames(styles.account, props.className)}
     >
       <Avatar icon={<UserOutlined/>}></Avatar>
       <span className={styles.name}>{name}</span>
