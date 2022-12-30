@@ -1,11 +1,8 @@
 import { RouteObject } from 'react-router-dom'
-
 import Layout from '../layout/Layout'
 import ErrorPage from '../views/error/ErrorPage/ErrorPage'
-import Home from '../views/Home/Home'
-import ArticleList from '../views/ArticleList/ArticleList'
-import Experiment from '../views/Experiment/Experiment'
 import ExperimentLoader from '../views/Experiment/ExperimentLoader'
+import Lazy from './Lazy/Lazy'
 
 const commonRoutes: RouteObject[] = [
   {
@@ -15,15 +12,15 @@ const commonRoutes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: <Home></Home>
+        element: Lazy('@/views/Home/Home')
       },
       {
         path: '/article',
-        element: <ArticleList></ArticleList>
+        element: Lazy('/src/views/ArticleList/ArticleList')
       },
       {
         path: '/experiment',
-        element: <Experiment></Experiment>,
+        element: Lazy('/src/views/Experiment/Experiment'),
         loader: ExperimentLoader
       }
     ]

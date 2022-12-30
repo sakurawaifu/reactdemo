@@ -31,8 +31,8 @@ const routes: RouteObject[] = [
 
 const Layout = (props: LayoutProps) => {
   console.log('layout')
-  const state = useNavigation()
-  console.log(state)
+  // const state = useNavigation()
+  // console.log(state)
 
   const linkList = useLinkList(routes)
 
@@ -57,7 +57,7 @@ const Layout = (props: LayoutProps) => {
         <Header className={styles.header}></Header>
         <Main className={styles.main}></Main>
 
-        <LoadingProgress complete={state.state === 'idle'}></LoadingProgress>
+        {/*<LoadingProgress complete={state.state === 'idle'}></LoadingProgress>*/}
       </div>
     </ThemeContext.Provider>
   )
