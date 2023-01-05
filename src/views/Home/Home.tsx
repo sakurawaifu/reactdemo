@@ -1,7 +1,7 @@
-import styles from './Home.module.scss'
 import React from 'react'
+import styles from './Home.module.scss'
 import classnames from '../../utils/classnames'
-import { CProps } from '../../types/CProps'
+import { CProps } from '@/types/CProps'
 
 export type HomeProps = CProps<{}>
 

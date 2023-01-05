@@ -2,7 +2,7 @@ import styles from './Account.module.scss'
 import { Avatar } from 'antd'
 import { UserOutlined } from '@ant-design/icons';
 import classnames from '../../utils/classnames'
-import { CProps } from '../../types/CProps'
+import { CProps } from '@/types/CProps'
 
 export type AccountProps = CProps<{}>
 

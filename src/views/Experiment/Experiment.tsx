@@ -1,7 +1,7 @@
 import styles from './Experiment.module.scss'
 import { NavLink, useLoaderData, useNavigation } from 'react-router-dom'
 import { LoaderResult } from './ExperimentLoader'
-import { CProps } from '../../types/CProps'
+import { CProps } from '@/types/CProps'
 import classnames from '../../utils/classnames'
 
 export type ExperimentProps = CProps<{}>

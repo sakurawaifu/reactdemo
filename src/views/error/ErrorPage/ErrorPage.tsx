@@ -1,6 +1,6 @@
 import styles from './ErrorPage.module.scss'
 import { useRouteError } from 'react-router-dom'
-import { CProps } from '../../../types/CProps'
+import { CProps } from '@/types/CProps'
 import classnames from '../../../utils/classnames'
 
 export type ErrorPageProps = CProps<{}>

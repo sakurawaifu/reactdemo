@@ -9,7 +9,7 @@ import classnames from '../utils/classnames'
 import Main from './components/Main/Main'
 import { useNavigation } from 'react-router-dom'
 import LoadingProgress from './components/LoadingProgress/LoadingProgress'
-import { CProps } from '../types/CProps'
+import { CProps } from '@/types/CProps'
 
 export type LayoutProps = CProps<{}>
 

@@ -3,7 +3,7 @@ import Mode from '../../constant/theme/Mode'
 import classnames from '../../utils/classnames'
 import SunIcon from '../../assets/icon/sun.svg'
 import NightIcon from '../../assets/icon/night.svg'
-import { CProps } from '../../types/CProps'
+import { CProps } from '@/types/CProps'
 
 export type ModeSwitchProps = CProps<{
   mode: Mode,

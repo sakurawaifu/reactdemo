@@ -1,8 +1,8 @@
 import styles from './ArticleList.module.scss'
 import useMount from '../../hooks/common/useMount'
-import { fetchArticleList } from '../../api/article'
+import { fetchArticleList } from '@/api/article'
 import classnames from '../../utils/classnames'
-import { CProps } from '../../types/CProps'
+import { CProps } from '@/types/CProps'
 
 export type ArticleListProps = CProps<{}>
 

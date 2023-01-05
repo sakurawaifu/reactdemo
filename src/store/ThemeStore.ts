@@ -1,4 +1,4 @@
-import { Theme } from '../context/ThemeContext'
+import { Theme } from '@/context/ThemeContext'
 import storage from '../utils/storage'
 import defaultTheme from '../constant/theme/defaultTheme'
 
