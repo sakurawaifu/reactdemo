@@ -6,7 +6,7 @@ export type LoaderResult = string
 const ExperimentLoader: LoaderFunction = async () => {
   console.log('experiment loader')
   await setTimeoutAsync(1000)
-  const result = 'loader complete'
+  const result: LoaderResult = 'loader complete'
   return result
 }
 
