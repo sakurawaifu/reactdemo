@@ -4,7 +4,7 @@ import './styles/global.scss'
 
 import reportWebVitals from './reportWebVitals'
 import { RouterProvider } from 'react-router-dom'
-import router from './router/router'
+import router from './route/router'
 
 const root = createRoot(
   document.getElementById('root') as HTMLElement

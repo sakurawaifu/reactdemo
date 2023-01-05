@@ -1,8 +1,7 @@
 import { RouteObject } from 'react-router-dom'
-import Layout from '../layout/Layout'
-import ErrorPage from '../views/error/ErrorPage/ErrorPage'
-import ExperimentLoader from '../views/Experiment/ExperimentLoader'
-import Lazy from '../utils/Lazy'
+import Layout from '@/layout/Layout'
+import ExperimentLoader from '@/views/Experiment/ExperimentLoader'
+import Lazy from '@/utils/Lazy'
 
 const LazyView = (name: string) => Lazy('views', name)
 
@@ -10,7 +9,7 @@ const commonRoutes: RouteObject[] = [
   {
     path: '/',
     element: <Layout></Layout>,
-    errorElement: <ErrorPage></ErrorPage>,
+    errorElement: LazyView('ErrorPage'),
     children: [
       {
         path: '/',
