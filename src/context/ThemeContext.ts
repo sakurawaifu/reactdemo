@@ -1,4 +1,4 @@
-import React from 'react'
+import { createContext } from 'react'
 import Mode from '../constant/theme/Mode'
 import ThemeStore from '../store/ThemeStore'
 
@@ -6,7 +6,7 @@ export type Theme = {
   mode: Mode
 }
 
-const ThemeContext = React.createContext({
+const ThemeContext = createContext({
   theme: ThemeStore.get(),
   toggleMode: () => {
   }

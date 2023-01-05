@@ -1,4 +1,4 @@
-import React from 'react'
+import { memo } from 'react'
 import styles from './Home.module.scss'
 import classnames from '../../utils/classnames'
 import { CProps } from '@/types/CProps'
@@ -6,7 +6,7 @@ import Hot from '@/components/Hot/Hot'
 
 export type HomeProps = CProps<{}>
 
-const Home = React.memo((props: HomeProps) => {
+const Home = memo((props: HomeProps) => {
   console.log('home')
 
   return (

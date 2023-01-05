@@ -2,7 +2,7 @@ import { RouteObject } from 'react-router-dom'
 import Layout from '../layout/Layout'
 import ErrorPage from '../views/error/ErrorPage/ErrorPage'
 import ExperimentLoader from '../views/Experiment/ExperimentLoader'
-import Lazy from './Lazy/Lazy'
+import Lazy from '../utils/Lazy'
 
 const LazyView = (name: string) => Lazy('views', name)
 
