@@ -12,15 +12,15 @@ const commonRoutes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: Lazy('@/views/Home/Home')
+        element: Lazy('views', 'Home')
       },
       {
         path: '/article',
-        element: Lazy('/src/views/ArticleList/ArticleList')
+        element: Lazy('views', 'ArticleList')
       },
       {
         path: '/experiment',
-        element: Lazy('/src/views/Experiment/Experiment'),
+        element: Lazy('views', 'Experiment'),
         loader: ExperimentLoader
       }
     ]
