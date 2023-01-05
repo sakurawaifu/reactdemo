@@ -4,6 +4,8 @@ import ErrorPage from '../views/error/ErrorPage/ErrorPage'
 import ExperimentLoader from '../views/Experiment/ExperimentLoader'
 import Lazy from './Lazy/Lazy'
 
+const LazyView = (name: string) => Lazy('views', name)
+
 const commonRoutes: RouteObject[] = [
   {
     path: '/',
@@ -12,15 +14,15 @@ const commonRoutes: RouteObject[] = [
     children: [
       {
         path: '/',
-        element: Lazy('views', 'Home')
+        element: LazyView('Home')
       },
       {
         path: '/article',
-        element: Lazy('views', 'ArticleList')
+        element: LazyView('ArticleList')
       },
       {
         path: '/experiment',
-        element: Lazy('views', 'Experiment'),
+        element: LazyView('Experiment'),
         loader: ExperimentLoader
       }
     ]
