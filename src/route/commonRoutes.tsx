@@ -3,25 +3,23 @@ import Layout from '@/layout/Layout'
 import ExperimentLoader from '@/views/Experiment/ExperimentLoader'
 import Lazy from '@/utils/Lazy'
 
-const LazyView = (name: string) => Lazy('views', name)
-
 const commonRoutes: RouteObject[] = [
   {
     path: '/',
     element: <Layout></Layout>,
-    errorElement: LazyView('ErrorPage'),
+    errorElement: Lazy('views/error', 'ErrorPage'),
     children: [
       {
-        path: '/',
-        element: LazyView('Home')
+        index: true,
+        element: Lazy('views', 'Home')
       },
       {
-        path: '/article',
-        element: LazyView('ArticleList')
+        path: 'article',
+        element: Lazy('views', 'ArticleList')
       },
       {
-        path: '/experiment',
-        element: LazyView('Experiment'),
+        path: 'experiment',
+        element: Lazy('views', 'Experiment'),
         loader: ExperimentLoader
       }
     ]
