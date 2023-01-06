@@ -26,6 +26,10 @@ const routes: RouteObject[] = [
   {
     path: '/experiment',
     label: 'experiment'
+  },
+  {
+    path: '/temp',
+    label: 'temp'
   }
 ]
 

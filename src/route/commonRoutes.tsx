@@ -1,7 +1,7 @@
-import { RouteObject } from 'react-router-dom'
+import { redirect, RouteObject } from 'react-router-dom'
 import Layout from '@/layout/Layout'
-import ExperimentLoader from '@/views/Experiment/ExperimentLoader'
 import Lazy from '@/utils/Lazy'
+import ArticleListLoader from '@/views/ArticleList/ArticleListLoader'
 
 const commonRoutes: RouteObject[] = [
   {
@@ -15,14 +15,22 @@ const commonRoutes: RouteObject[] = [
       },
       {
         path: 'article',
-        element: Lazy('views', 'ArticleList')
+        element: Lazy('views', 'ArticleList'),
+        loader: ArticleListLoader
       },
       {
         path: 'experiment',
-        element: Lazy('views', 'Experiment'),
-        loader: ExperimentLoader
+        element: Lazy('views', 'Experiment')
+      },
+      {
+        path: 'temp',
+        loader: async () => redirect('/article')
       }
     ]
+  },
+  {
+    path: '*',
+    element: Lazy('views/error', 'NotFound')
   }
 ]
 

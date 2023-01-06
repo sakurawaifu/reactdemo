@@ -1,15 +1,14 @@
 import styles from './ArticleList.module.scss'
-import useMount from '../../hooks/common/useMount'
-import { fetchArticleList } from '@/api/article'
 import classnames from '../../utils/classnames'
 import { CProps } from '@/types/CProps'
+import { useLoaderData } from 'react-router-dom'
 
 export type ArticleListProps = CProps<{}>
 
 const ArticleList = (props: ArticleListProps) => {
-  useMount(() => {
-    fetchArticleList()
-  })
+  console.log('article list')
+  const list = useLoaderData()
+  console.log(list)
 
   return (
     <div className={classnames(styles.articleList, props.className)}>
