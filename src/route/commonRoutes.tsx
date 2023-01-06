@@ -1,4 +1,4 @@
-import { redirect, RouteObject } from 'react-router-dom'
+import { Navigate, RouteObject } from 'react-router-dom'
 import Layout from '@/layout/Layout'
 import Lazy from '@/utils/Lazy'
 import ArticleListLoader from '@/views/ArticleList/ArticleListLoader'
@@ -24,7 +24,7 @@ const commonRoutes: RouteObject[] = [
       },
       {
         path: 'temp',
-        loader: async () => redirect('/article')
+        element: <Navigate to={'/article'}></Navigate>
       }
     ]
   },
