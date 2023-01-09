@@ -1,12 +1,12 @@
 import styles from './Counter.module.scss'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import useCount from '../../hooks/common/useCount'
 import { CProps } from '@/types/CProps'
 import classnames from '../../utils/classnames'
 
 export type CounterProps = CProps<{
   init?: number
-  delta?: number,
+  delta?: number
   onChange?: (value: number) => void
 }>
 

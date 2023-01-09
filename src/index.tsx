@@ -1,7 +1,5 @@
-import { createRoot } from 'react-dom/client'
-
 import './styles/global.scss'
-
+import { createRoot } from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
 import { RouterProvider } from 'react-router-dom'
 import router from './route/router'

@@ -5,12 +5,15 @@ import { Menu } from 'antd'
 import { useLocation } from 'react-router-dom'
 import useIsNightMode from '@/hooks/theme/useIsNightMode'
 import classnames from '@/utils/classnames'
-import { CProps } from '@/types/CProps'
+import type { CProps } from '@/types/CProps'
+import { MenuDividerType } from 'antd/es/menu/hooks/useItems'
 
-export type ItemType = Omit<MenuProps['items'], 'key'> & { key: string }
+type MenuPropsItem = Exclude<MenuProps['items'], undefined>[number]
+type LabelMenuItem = Exclude<MenuPropsItem, null | MenuDividerType>
+export type SidebarMenuItem = Omit<LabelMenuItem, 'key'> & { key: string }
 
-type SidebarProps = CProps<{
-  menuItems: ItemType[]
+export type SidebarProps = CProps<{
+  menuItems: SidebarMenuItem[]
 }>
 
 const Sidebar = memo((props: SidebarProps) => {

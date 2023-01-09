@@ -1,6 +1,5 @@
 import styles from './Layout.module.scss'
 import Sidebar from './components/Sidebar/Sidebar'
-import useLinkList, { RouteObject } from './hook/useLinkList'
 import ThemeContext from '../context/ThemeContext'
 import Header from './components/Header/Header'
 import useTheme from './hook/useTheme'
@@ -10,34 +9,16 @@ import Main from './components/Main/Main'
 import { useNavigation } from 'react-router-dom'
 import LoadingProgress from './components/LoadingProgress/LoadingProgress'
 import { CProps } from '@/types/CProps'
+import generateLinkList from '@/layout/utils/generateLinkList'
+import routes from '@/route/routes'
+
+const linkList = generateLinkList(routes)
 
 export type LayoutProps = CProps<{}>
-
-// todo
-const routes: RouteObject[] = [
-  {
-    path: '/',
-    label: 'home'
-  },
-  {
-    path: '/article',
-    label: 'article'
-  },
-  {
-    path: '/experiment',
-    label: 'experiment'
-  },
-  {
-    path: '/temp',
-    label: 'temp'
-  }
-]
 
 const Layout = (props: LayoutProps) => {
   console.log('layout')
   const navigation = useNavigation()
-
-  const linkList = useLinkList(routes)
 
   const [
     theme,

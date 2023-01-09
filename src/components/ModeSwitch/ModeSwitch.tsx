@@ -6,7 +6,7 @@ import NightIcon from '../../assets/icon/night.svg'
 import { CProps } from '@/types/CProps'
 
 export type ModeSwitchProps = CProps<{
-  mode: Mode,
+  mode: Mode
   onModeChange: () => void
 }>
 
