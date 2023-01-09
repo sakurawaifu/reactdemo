@@ -14,7 +14,6 @@ export type SidebarProps = CProps<{}>
 
 const Sidebar = memo((props: SidebarProps) => {
   const isNightMode = useIsNightMode()
-
   const [selectedKeys, handleClickMenuItem] = useSelectedKeys()
 
   return (

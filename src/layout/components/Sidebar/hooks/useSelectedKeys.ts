@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { MenuProps } from 'antd'
 
 const useSelectedKeys = () => {
@@ -7,9 +7,12 @@ const useSelectedKeys = () => {
 
   const { pathname } = useLocation()
   const [selectedKeys, setSelectedKeys] = useState<string[]>([pathname])
+  useEffect(() => {
+    setSelectedKeys([pathname])
+  }, [pathname])
+
   const handleClickMenuItem: MenuProps['onClick'] = ({ key }) => {
     navigate(key)
-    setSelectedKeys([key])
   }
 
   return [selectedKeys, handleClickMenuItem] as const
