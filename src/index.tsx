@@ -1,15 +1,13 @@
-import './styles/global.scss'
 import { createRoot } from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
-import { RouterProvider } from 'react-router-dom'
-import router from './route/router'
+import App from '@/App/App'
 
 const root = createRoot(
   document.getElementById('root') as HTMLElement
 )
 
 root.render(
-  <RouterProvider router={router}></RouterProvider>
+  <App></App>
 )
 
 // If you want to start measuring performance in your app, pass a function

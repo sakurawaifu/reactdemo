@@ -1,4 +1,5 @@
 import { lazy, ReactNode, Suspense } from 'react'
+import Loading from '@/components/Loading/Loading'
 
 /**
  * 组件懒加载
@@ -7,7 +8,7 @@ import { lazy, ReactNode, Suspense } from 'react'
  * @param name 组件名
  * @param fallback 加载期间显示的内容
  */
-const Lazy = (path: string, name: string, fallback: ReactNode = null) => {
+const Lazy = (path: string, name: string, fallback: ReactNode = <Loading></Loading>) => {
   const Component = lazy(() => import(`@/${path}/${name}/${name}`))
 
   return (

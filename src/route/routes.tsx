@@ -32,14 +32,6 @@ const routes: HandleRouteObject[] = [
       label: '试验田',
       isMenuItem: true
     }
-  },
-  {
-    path: '/temp',
-    element: <Navigate to={'/article'}></Navigate>,
-    handle: {
-      label: '临时',
-      isMenuItem: true
-    }
   }
 ]
 

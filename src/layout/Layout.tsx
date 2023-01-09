@@ -9,10 +9,6 @@ import Main from './components/Main/Main'
 import { useNavigation } from 'react-router-dom'
 import LoadingProgress from './components/LoadingProgress/LoadingProgress'
 import { CProps } from '@/types/CProps'
-import generateLinkList from '@/layout/utils/generateLinkList'
-import routes from '@/route/routes'
-
-const linkList = generateLinkList(routes)
 
 export type LayoutProps = CProps<{}>
 
@@ -37,7 +33,7 @@ const Layout = (props: LayoutProps) => {
           { [styles.nightMode]: isNightMode }
         )}
       >
-        <Sidebar className={styles.sidebar} menuItems={linkList}></Sidebar>
+        <Sidebar className={styles.sidebar}></Sidebar>
         <Header className={styles.header}></Header>
         <Main className={styles.main}></Main>
 
