@@ -6,14 +6,16 @@ import { HandleRouteObject } from '@/types/HandleRouteObject'
 const routes: HandleRouteObject[] = [
   {
     path: '/',
-    element: <Navigate to={'/home'}></Navigate>
+    element: <Navigate to={'/home'}></Navigate>,
+    handle: {
+      isMenuItem: false
+    }
   },
   {
     path: '/home',
     element: Lazy('views', 'Home'),
     handle: {
-      label: 'home',
-      isMenuItem: true
+      label: 'home'
     }
   },
   {
@@ -21,16 +23,21 @@ const routes: HandleRouteObject[] = [
     element: Lazy('views', 'ArticleList'),
     loader: ArticleListLoader,
     handle: {
-      label: '文章列表',
-      isMenuItem: true
+      label: '文章列表'
+    }
+  },
+  {
+    path: '/unicode',
+    element: Lazy('views', 'Unicode'),
+    handle: {
+      label: 'Unicode'
     }
   },
   {
     path: '/experiment',
     element: Lazy('views', 'Experiment'),
     handle: {
-      label: '试验田',
-      isMenuItem: true
+      label: '试验田'
     }
   }
 ]

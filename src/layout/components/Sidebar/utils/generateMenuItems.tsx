@@ -8,7 +8,7 @@ export type SidebarMenuItem = Omit<LabelMenuItem, 'key'> & { key: string }
 
 const generateMenuItems = (routes: HandleRouteObject[]): SidebarMenuItem[] => {
   // todo 目前只有一级菜单
-  return routes.filter(v => v.handle?.isMenuItem).map(v => {
+  return routes.filter(({ handle }) => !(handle?.isMenuItem === false)).map(v => {
     const path = v.path as string
     const label = v.handle?.label
     return {
