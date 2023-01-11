@@ -1,0 +1,25 @@
+.emoji-list,
+.emoji-cell {
+  box-sizing: content-box;
+}
+
+.emoji-list {
+  --cell-size: 36px;
+  --emoji-fs: 22px;
+  --col-count: 8;
+  --row-count: 10;
+  width: calc(var(--cell-size) * var(--col-count) + var(--scrollbar-size));
+  height: calc(var(--cell-size) * var(--row-count));
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+.emoji-cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  font-size: var(--emoji-fs);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
