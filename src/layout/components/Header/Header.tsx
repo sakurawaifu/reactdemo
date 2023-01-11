@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { memo, useContext } from 'react'
 import styles from './Header.module.scss'
 import { CProps } from '@/types/CProps'
 import Account from '@/components/Account/Account'
@@ -9,7 +9,7 @@ import useIsNightMode from '@/hooks/theme/useIsNightMode'
 
 export type HeaderProps = CProps<{}>
 
-const Header = (props: HeaderProps) => {
+const Header = memo((props: HeaderProps) => {
   const isNightMode = useIsNightMode()
   const { theme, toggleMode } = useContext(ThemeContext)
 
@@ -25,5 +25,6 @@ const Header = (props: HeaderProps) => {
       <Account></Account>
     </header>
   )
-}
+})
+
 export default Header

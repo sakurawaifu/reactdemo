@@ -1,9 +1,9 @@
-import { createBrowserRouter, RouteObject } from 'react-router-dom'
 import Layout from '@/layout/Layout'
 import Lazy from '@/utils/Lazy'
 import routes from '@/route/routes'
+import { RouteObject } from 'react-router-dom'
 
-const router = createBrowserRouter([
+const rootRoutes: RouteObject[] = [
   {
     path: '/',
     element: <Layout></Layout>,
@@ -14,6 +14,6 @@ const router = createBrowserRouter([
     path: '*',
     element: Lazy('views/error', 'NotFound')
   }
-])
+]
 
-export default router
+export default rootRoutes
