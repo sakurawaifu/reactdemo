@@ -1,18 +1,21 @@
-.emoji-list,
-.emoji-cell {
-  box-sizing: content-box;
-}
-
 .emoji-list {
   --cell-size: 36px;
   --emoji-fs: 22px;
   --col-count: 8;
   --row-count: 10;
-  width: calc(var(--cell-size) * var(--col-count) + var(--scrollbar-size));
-  height: calc(var(--cell-size) * var(--row-count));
+  --gap: 4px;
+  border-radius: 5px;
+  border: solid 1px #c7c7c7;
+  width: fit-content;
   overflow: auto;
+}
+
+.emoji-list-wrapper {
+  width: fit-content;
+  height: calc(var(--cell-size) * var(--row-count) + var(--gap) * (var(--row-count) - 1));
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(var(--col-count), 1fr);
+  gap: var(--gap);
 }
 
 .emoji-cell {

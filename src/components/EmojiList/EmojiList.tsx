@@ -25,7 +25,9 @@ const EmojiList = memo((props: EmojiListProps) => {
 
   return (
     <div className={classnames(styles.emojiList, props.className)}>
-      {cells}
+      <div className={styles.emojiListWrapper}>
+        {cells}
+      </div>
     </div>
   )
 })
