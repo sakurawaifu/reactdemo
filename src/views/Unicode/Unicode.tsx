@@ -26,11 +26,11 @@ const Unicode = (props: UnicodeProps) => {
       <div className={styles.actionBar}>
         <CodePointInput
           defaultValue={defaultStart}
-          onInput={codePoint => startCodePointRef.current = codePoint}
+          onChange={codePoint => startCodePointRef.current = codePoint}
         ></CodePointInput>
         <CodePointInput
           defaultValue={defaultEnd}
-          onInput={codePoint => endCodePointRef.current = codePoint}
+          onChange={codePoint => endCodePointRef.current = codePoint}
         ></CodePointInput>
         <Button type="primary" onClick={generate}>生成</Button>
       </div>
