@@ -8,7 +8,7 @@ export type ArticleListProps = CProps<{}>
 const ArticleList = (props: ArticleListProps) => {
   console.log('article list')
   const list = useLoaderData()
-  // console.log(list)
+  console.log(list)
 
   return (
     <div className={classnames(styles.articleList, props.className)}>

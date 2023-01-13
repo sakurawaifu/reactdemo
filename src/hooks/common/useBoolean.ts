@@ -10,6 +10,7 @@ const useBoolean = (init: boolean = false) => {
   return [
     bool,
     {
+      setBool,
       setTrue,
       setFalse,
       toggle

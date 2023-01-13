@@ -1,30 +1,35 @@
 import styles from './CodePointInput.module.scss'
-import { Input } from 'antd'
+import { Input, InputProps } from 'antd'
 import { CProps } from '@/types/CProps'
 import classnames from '@/utils/classnames'
 import { ChangeEventHandler, useState } from 'react'
-import useBoolean from '@/hooks/common/useBoolean'
+import UnicodeUtils from '@/utils/UnicodeUtils'
+import { omit } from 'lodash-es'
 
-export type CodePointInputProps = CProps<{
-  onInput?: (codePointHexStr: string) => void
+export type CodePointInputProps = CProps<Omit<InputProps, 'defaultValue' | 'onInput'> & {
+  defaultValue?: number,
+  onInput?: (codePoint: number) => void
 }>
 
-const INVALID_CHAR_REG = /[^A-Fa-f0-9]/ug
-
 const CodePointInput = (props: CodePointInputProps) => {
-  const [text, setText] = useState('')
-  const [valid, setValid] = useBoolean(true)
+  const [text, setText] = useState(
+    props.defaultValue !== undefined
+      ? UnicodeUtils.format(props.defaultValue)
+      : ''
+  )
 
-  const handleChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-    const originText = e.currentTarget.value
-    const result = originText.replaceAll(INVALID_CHAR_REG, '')
-    const newText = result.toUpperCase()
-    setText(newText)
-    props.onInput?.(newText)
+  const handleChange: ChangeEventHandler<HTMLInputElement> = ({ currentTarget: { value } }) => {
+    const filtratedText = value.replaceAll(/[^A-Fa-f0-9]/ug, '')
+    const number = filtratedText === '' ? 0 : Number.parseInt(filtratedText, 16)
+    const codePoint = UnicodeUtils.clamp(number)
+    const resultText = UnicodeUtils.format(codePoint)
+    setText(resultText)
+    props.onInput?.(codePoint)
   }
 
   return (
     <Input
+      {...omit(props, 'onInput')}
       className={classnames(styles.codePointInput, props.className)}
       prefix={'U+'}
       maxLength={6}

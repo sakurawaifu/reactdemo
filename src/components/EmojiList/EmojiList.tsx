@@ -4,21 +4,21 @@ import { CProps } from '@/types/CProps'
 import { memo } from 'react'
 import EmojiCell from '@/components/EmojiList/components/EmojiCell/EmojiCell'
 
-export type EmojiListProps = CProps<{}>
-
-const startCodePoint = 0x1f900
-const endCodePoint = 0x1fa00
-const count = endCodePoint - startCodePoint + 1
+export type EmojiListProps = CProps<{
+  start: number,
+  end: number
+}>
 
 const EmojiList = memo((props: EmojiListProps) => {
+  const { start, end } = props
+
   const cells = []
-  for (let i = 0; i < count; i++) {
-    const curCodePoint = startCodePoint + i
+  for (let i = start; i <= end; i++) {
     cells.push(
       <EmojiCell
-        key={curCodePoint}
+        key={i}
         className={styles.emojiCell}
-        codePoint={curCodePoint}
+        codePoint={i}
       ></EmojiCell>
     )
   }
