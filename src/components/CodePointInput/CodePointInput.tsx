@@ -20,12 +20,13 @@ const CodePointInput = (props: CodePointInputProps) => {
   )
 
   const handleChange: ChangeEventHandler<HTMLInputElement> = ({ currentTarget: { value } }) => {
-    if (value === '') {
+    const filtratedText = value.replaceAll(/[^A-Fa-f0-9]/ug, '')
+    if (filtratedText === '') {
       codePointRef.current = 0
       setText('')
       return
     }
-    const filtratedText = value.replaceAll(/[^A-Fa-f0-9]/ug, '')
+
     const number = Number.parseInt(filtratedText, 16)
     codePointRef.current = UnicodeUtils.clamp(number)
     const resultText = codePointRef.current.toString(16).toUpperCase()
