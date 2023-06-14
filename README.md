@@ -16,7 +16,7 @@
 * 组件文件默认导出组件函数。
 
 ### 样式
-* 样式方案使用 css module，组件样式文件命名为 componentName.module.scss。
+* 样式方案使用 css module，组件样式文件命名为 ComponentName.module.scss。
 * 组件 class 可使用 classnames 方法设置。
 * 组件根元素必须设置组件同名的 class，以及 props.className。后者用于接收父组件设置的class。
 

@@ -1,19 +1,24 @@
 import styles from './Experiment.module.scss'
 import { CProps } from '@/types/CProps'
 import classnames from '@/utils/classnames'
-import { DatePicker } from 'antd'
+import { ChangeEventHandler, FormEventHandler } from 'react'
 
 export type ExperimentProps = CProps<{}>
 
 const Experiment = (props: ExperimentProps) => {
-  console.log('experiment')
+  const handleInput: FormEventHandler =  (e) => {
+    console.log('input')
+    console.log(e)
+  }
+
+  const handleChange: ChangeEventHandler = (e) => {
+    console.log('change')
+    console.log(e)
+  }
 
   return (
     <div className={classnames(styles.experiment, props.className)}>
-      <header>experiment</header>
-      <main>
-        <DatePicker></DatePicker>
-      </main>
+      <input onInput={handleInput} onChange={handleChange} />
     </div>
   )
 }

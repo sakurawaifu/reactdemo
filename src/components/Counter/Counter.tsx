@@ -29,7 +29,7 @@ const Counter = (props: CounterProps) => {
 
   useEffect(() => {
     onChange?.(count)
-  }, [count, onChange])
+  }, [count])
 
   return (
     <div className={classnames(styles.counter, props.className)}>
